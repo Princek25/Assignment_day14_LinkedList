@@ -7,54 +7,62 @@ public class LinkedList<T> {
 
     public void push(T data) {
         Node<T> newNode = new Node(data);
-        if(head == null){
+        if (head == null) {
             head = newNode;
             tail = newNode;
-        }
-        else {
+        } else {
             newNode.next = head;
             head = newNode;
         }
     }
-    public void show(){
+
+    public void show() {
         Node<T> temp = head;
-        while (temp != null){
+        while (temp != null) {
             System.out.println(temp.data);
             temp = temp.next;
         }
     }
-    public void add(T data){
-        Node<T> node=new Node<>(data);
-        if(head == null){
+
+    public void add(T data) {
+        Node<T> node = new Node<>(data);
+        if (head == null) {
             head = node;
             tail = node;
-        }
-        else{
+        } else {
             tail.next = node;
             tail = node;
         }
     }
-    public void display(){
+
+    public void display() {
         Node<T> temp = head;
-        while (temp != null){
+        while (temp != null) {
             System.out.println(temp.data);
             temp = temp.next;
         }
     }
-    public void append(T data){
+
+    public void append(T data) {
         Node newNode = new Node<>(data);
-        if(head == null){
+        if (head == null) {
             head = newNode;
-        }
-        else {
-            tail.next=newNode;
+        } else {
+            tail.next = newNode;
         }
         tail = newNode;
     }
-    public void insert(T data){
+
+    public void insert(T data) {
         Node<T> node = new Node<>(data);
-        head.next=node;
-        node.next=tail;
+        head.next = node;
+        node.next = tail;
+    }
+
+    public T pop() {
+        T deleteElement = (T) head.data;
+        head = head.next;
+        return deleteElement;
     }
 }
 
