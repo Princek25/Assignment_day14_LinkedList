@@ -7,6 +7,7 @@ public class LinkedListMain {
         list1.push(56);
         list1.insert(30);
         System.out.println(list1.pop());
+        System.out.println(list1.popLast());
         list1.display();
         System.out.println();
         list1.display();
